@@ -100,20 +100,20 @@ export function LoginForm({
                 />
               </Field>
               <Field>
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white disabled:bg-blue-400 disabled:text-white" disabled={isLoading}>
+                <Button type="submit" className="w-full bg-foreground text-background hover:bg-foreground/90 disabled:opacity-50" disabled={isLoading}>
                   {isLoading ? 'Signing In...' : 'Sign In'}
                 </Button>
                 <FieldDescription className="text-center">
-                  Don&apos;t have an account? <a href="/signup" className="text-blue-600 hover:underline">Create one here</a>
+                  Don&apos;t have an account? <a href="/signup" className="text-primary hover:underline">Create one here</a>
                 </FieldDescription>
               </Field>
             </FieldGroup>
           </form>
         </CardContent>
       </Card>
-      <FieldDescription className="px-6 text-center text-sm text-gray-600">
-        By signing in, you agree to PulseGen&apos;s <a href="#" className="text-blue-600 hover:underline">Terms of Service</a>{" "}
-        and <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a>.
+      <FieldDescription className="px-6 text-center text-sm text-muted-foreground">
+        By signing in, you agree to PulseGen&apos;s <a href="#" className="text-primary hover:underline">Terms of Service</a>{" "}
+        and <a href="#" className="text-primary hover:underline">Privacy Policy</a>.
       </FieldDescription>
     </div>
   )

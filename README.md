@@ -1,73 +1,120 @@
-# React + TypeScript + Vite
+# PulseGen Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern React-based web application for video management and streaming with real-time features.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+PulseGen Frontend is a responsive web application built with React and TypeScript that provides an intuitive interface for video upload, management, and streaming. It features a modern dashboard with real-time updates and comprehensive user management.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Modern responsive dashboard interface
+- Video upload and management system
+- Real-time updates via Socket.io
+- User authentication and profile management
+- Dark/light theme support
+- Drag and drop functionality
+- Advanced data tables with sorting and filtering
+- Form validation with React Hook Form and Zod
+- Toast notifications and loading states
+- Settings and configuration management
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Framework**: React 19 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI primitives
+- **Icons**: Tabler Icons, Lucide React
+- **State Management**: TanStack Query (React Query)
+- **Routing**: React Router DOM
+- **Forms**: React Hook Form with Zod validation
+- **Real-time**: Socket.io Client
+- **HTTP Client**: Axios
+- **Charts**: Recharts
+- **Themes**: next-themes
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js (v18 or higher)
+- pnpm package manager
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Installation
+
+1. Clone the repository
+2. Navigate to the frontend directory
+3. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+
+## Environment Variables
+
+Create a `.env` file in the frontend directory:
+
+```env
+VITE_API_URL=http://localhost:3000
+VITE_SOCKET_URL=http://localhost:3000
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+For production, create a `.env.production` file:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_API_URL=https://your-backend-api.com
+VITE_SOCKET_URL=https://your-backend-api.com
 ```
+
+## Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm build:prod` - Build for production with production environment
+- `pnpm start` - Start production server
+- `pnpm preview` - Preview production build
+- `pnpm lint` - Run ESLint
+
+## Application Routes
+
+- `/` - Redirects to dashboard
+- `/login` - User login page
+- `/signup` - User registration page
+- `/dashboard` - Main dashboard
+- `/dashboard/videos` - Video management
+- `/dashboard/upload` - Video upload interface
+- `/dashboard/settings` - Application settings
+- `/dashboard/profile` - User profile management
+
+## Key Components
+
+- **Dashboard**: Main application interface with navigation
+- **Video Management**: Upload, view, and manage videos
+- **Authentication**: Login and signup forms with validation
+- **Theme Provider**: Dark/light mode support
+- **Socket Integration**: Real-time communication
+- **Form Components**: Reusable form elements with validation
+
+## UI Components
+
+The application uses a comprehensive design system built on Radix UI:
+
+- Buttons, inputs, and form controls
+- Data tables with sorting and pagination
+- Modal dialogs and dropdowns
+- Progress indicators and loading states
+- Toast notifications
+- Accordion and collapsible components
+- Tabs and navigation elements
+
+## Development
+
+The application is built with modern React patterns:
+
+- Functional components with hooks
+- Context providers for global state
+- Custom hooks for data fetching
+- TypeScript for type safety
+- Responsive design with Tailwind CSS
+
+## Deployed
+
+Frontend Application: https://frontend-bqh3.onrender.com
