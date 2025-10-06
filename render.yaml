@@ -2,7 +2,7 @@ services:
   - type: web
     name: pulsegen-frontend
     runtime: node
-    buildCommand: pnpm install --frozen-lockfile && pnpm run build
+    buildCommand: pnpm install --no-frozen-lockfile && pnpm run build
     startCommand: pnpm start
     plan: starter
     headers:
